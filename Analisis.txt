@@ -1,0 +1,40 @@
+Analisis:
+
+en el caso se puede apreciar que para filtrar una serie de señales se debe utiliza la campana de Gauss como medida de problabilidad, para esto se halla la probabilidad acomulada de la señal con respecto a la función de densidad de probabilidad (fdp) y si esta llega a mas del 30%, la señal sera admitida, de lo contrario se bloqueara 
+
+La fbp es determinada por la siguiente funcion 𝑓(𝑥) = (1/(𝜎*√(2*𝜋)))*𝑒^((−1/2)*((𝑥−𝜇)/𝜎^2) dentro de esta hay dos símbolos, my y Sigma. Estas son las variables que representan la media y la desviación estándar respectivamente, así que tendrían un valor especificado dentro del algoritmo
+(En el modelo se les da el valor de 1000 Hz para la media y 300 hz para la desviación estándar)
+
+en pocas palabras, la funcion debe hacer un recorrido desde los 0 Hz hasta la frecuencia de la señal
+
+teniendo esto en cuenta podemos sacar algunas variables para el algoritmo, los cuales serian 
+
+- 𝜇 (my) = media
+
+- 𝜎 (sigma) = desbiacion estandar
+
+- prob acumulada
+
+- frecuencia = frecuencia de la señal a analizar
+
+Ademas de eso tambien hay un par de simbolos y ecuaciones que seria conveniente espesificar, como puede ser e (euler), √(2*𝜋), 𝑥−𝜇 etc. asi que a cada una le asignamos una letra para facilitar el calculo:
+
+- a = √(2*𝜋)
+
+- b = 𝜎*a
+
+- c = 1/b
+
+- d = 𝜎^2
+
+- e = e
+
+- f = 𝑥−𝜇
+
+- g = f/d
+
+dejando la ecuacion de esta forma: f(x) = c*e^g
+
+entonces, para allar el la probabilidad acomulada se debe intercambiar x por el valor de 0 e ir sumandole 1 hasta que llege al valor f, luego sumar todos los resultados y verifivar si es mayor al 30%
+
+
